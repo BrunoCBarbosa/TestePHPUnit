@@ -7,7 +7,7 @@ php:
   # - '7.1.10'
  
 before_script:
-cd outro
+- cd outro
 #   - composer --dev --prefer-source install
 
 script: phpunit
