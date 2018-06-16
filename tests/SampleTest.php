@@ -19,6 +19,6 @@ class SampleTest extends PHPUnit_Framework_TestCase
   public function testValidEmail(){
     $this->CI->load->helper('string');
     $my_string = random_string('alnum',10);
-    $this->assertEquals(strlen($my_string),10);
+    $this->assertEquals(strlen($my_string),9);
   }
 }
