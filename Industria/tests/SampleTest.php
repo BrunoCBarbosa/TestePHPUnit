@@ -1,24 +1,36 @@
 <?php
 class SampleTest extends PHPUnit_Framework_TestCase
 {
-  private $CI;
-  public function setUp()
-  {
-    $this->CI = &get_instance();
-  }
-  public function testPushAndPop()
-  {
-    $stack = array();
-    $this->assertEquals(0, count($stack));
-    array_push($stack, 'foo');
-    $this->assertEquals('foo', $stack[count($stack)-1]);
-    $this->assertEquals(1, count($stack));
-    $this->assertEquals('foo', array_pop($stack));
-    $this->assertEquals(0, count($stack));
-  }
-  public function testValidEmail(){
-    $this->CI->load->helper('string');
-    $my_string = random_string('alnum',10);
-    $this->assertEquals(strlen($my_string),5);
-  }
+    
+    protected $CI;
+    
+    public function __construct()
+    {
+        // Assign the CodeIgniter super-object
+        $this->CI = &get_instance();
+    }
+
+
+   public function testeLogar(){
+        $this->CI->load->model('testemodel');
+        
+        $cpf = '09365640679';
+        $senha = md5('br280190');
+        
+       $this->assertTrue($this->CI->testemodel->logar($cpf,$senha));
+
+
+    }
+    
+    public function testeRelatorio(){
+        $this->CI->load->model('relatoriosmodel');
+        
+        $data_inicio = new DateTime('2018-08-03');
+        $data_fim = new DateTime('2018-08-06');
+        
+        $this->assertTrue($data_inicio < $data_fim);
+        
+    }
+    
+    
 }
