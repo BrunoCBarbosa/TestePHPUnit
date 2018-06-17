@@ -10,7 +10,7 @@ php:
 # - mysql
 
 before_script:
- - cd outro
+ - cd Outro
 #   - composer --dev --prefer-source install
 
 script: phpunit
