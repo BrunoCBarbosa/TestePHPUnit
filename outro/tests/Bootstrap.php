@@ -22,7 +22,7 @@ if( !defined('DS')){
  */
 $system_path = '../system';
 $application_folder = '../application';
-$view_folder = '';
+$view_folder = '../application/views';
 /*
  * ---------------------------------------------------------------
  *  Resolve the system path for increased reliability

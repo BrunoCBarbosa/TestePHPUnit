@@ -1,5 +1,5 @@
 <?php
-class SampleTest extends PHPUnit_Framework_TestCase
+class SampleTest extends PHPUnitx_Framework_TestCase
 {
   private $CI;
   public function setUp()
